@@ -6,3 +6,5 @@ const newUser = {
 
 console.log('hola');
 
+const {userName, userAge} = newUser;
+console.log(newUser);
