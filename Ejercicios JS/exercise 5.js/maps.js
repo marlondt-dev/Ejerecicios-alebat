@@ -25,7 +25,7 @@ function holaExists(){
         return 'hola exists'  
     }
     return 'Hola does not exist'
-}
+} 
 console.log(holaExists());
 
 console.log(newMap.size); 
