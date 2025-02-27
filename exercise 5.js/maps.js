@@ -14,21 +14,26 @@ newMap.set("funcion", function findAnimal(){
 });
 newMap.set("color", "red");
 
-console.log(newMap); //Muestra por consola todo el map
-console.log(newMap.get("moroso")); //Muestra por consola el key moroso
+//Ahora a imprimir ejercicios
 
-if (newMap.has("hola")){
-    console.log(`existe moroso`);   //Comprueba si existe la key hola
-}else{
-    console.log('no exsite hola')
+console.log(newMap); 
+
+console.log(newMap.get("moroso"));
+
+function holaExists(){
+    if (newMap.has("hola")){ 
+        return 'hola exists'  
+    }
+    return 'Hola does not exist'
 }
+console.log(holaExists());
 
-console.log(newMap.size); //Muestra por consola el tamaño total del map
+console.log(newMap.size); 
 
 newMap.forEach(function(value, key){
-    console.log(`${key}: ${value}`)   //Recorre el map con un forEach
+    console.log(`${key}: ${value}`)  
 })
 
-newMap.delete("agarrado") //Elimina el elemento agarrado del map
+newMap.delete("agarrado") 
 
 newMap.clear();
