@@ -21,20 +21,29 @@ const newUser = {
     name: "Pedro",
     last: "Sánchez",
     age: 45,
-    salary: 1000,
-    profesion: "Barro man",
+    salary: 5000,
+    profession: "Barro man",
   };
 
-  function getCompleteName(user){
-    return `Complete name is ${user.name} ${user.last} `
+  function getCompleteName({name = "unknown", last = "unknown"}, message = 'Name and last name are required') {
+    if (!name || !last) {
+        return message;
+    }
+    return `Your complete name is ${name} ${last}`;
+}
+  
+  function getAnnualSalary({salary} = {} , message = "Salary is required or your salary is less than 0"){
+    if( typeof salary !== "number" || salary <= 0){
+      return message
+    } 
+    const monthsInAYear = 12 
+    const yearSalary = salary * monthsInAYear
+    return `Your salary is: ${yearSalary} ` 
   }
 
-  function getAnnualSalary(user){
-    return user.salary * 12;
+  function printUserInfo(user){
+    console.log(`${getCompleteName(user)}  ${getAnnualSalary(user)}`);
   }
 
-  function printUserInfo(){
-    console.log(`${getCompleteName(newUser)}and his annual salary is ${getAnnualSalary(newUser)}`);
-  }
-
-  printUserInfo();
+  printUserInfo(newUser);
+  

@@ -23,15 +23,12 @@ const newUser = {
     profession: 'Barro man'
 }
 
-const {name, lastName} = newUser
 
-
-function completeUserName(user){
-    if(!user.name || !user.lastName){
-      return 'Debe ingresar todos los datos'
+function completeUserName({name, lastName} = {}, message = 'Name and last name are required'){
+    if(!name || !lastName){
+      return message
     }
 
-    return `Su nombre es ${user.name} ${user.lastName}`
+    return `Su nombre es ${name} ${lastName}`
 }
-
 console.log(completeUserName(newUser))
