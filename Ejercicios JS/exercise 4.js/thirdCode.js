@@ -37,11 +37,16 @@ const newUser = {
 
 
   function isForeign(user) {
+<<<<<<< HEAD
     if (user.userNationality != notEligibleCountry || user.userAge !== 30 ) {
       return 'This person is not eligible for  the goverment help'
+=======
+    if (user.userNationality != "España" || user.userAge !== 30 ) {
+      return 'This person is eligible for  the goverment help'
+>>>>>>> 08dbd3c2eefc3d5fd9dd32b54c0d5cd2c02f7aab
      }
     
-    return 'This person is eligible for the goverment help'
+    return 'This person is not eligible for the goverment help'
 }
   
   console.log(isForeign(newUser));

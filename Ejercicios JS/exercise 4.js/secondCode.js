@@ -1,44 +1,48 @@
-//Primer codigo
+const user = {
+  name: "Pedro",
+  last: "Sánchez",
+  age: 45,
+  salary: 1000,
+  profesion: "Barro man",
+};
+
+function userData(user) {
+  const annualSalary = user.salary * 12;
+  const fullName = `${user.name} ${user.last}`;
+
+  return `Me llamo ${fullName} y cobro ${annualSalary}€ al año`;
+}
+
+console.log(userData(user));
+
+//Refactorizando con primera ley de solid
 
 const newUser = {
-    nombre: "Pedro",
-    apellido: "Sánchez",
-    edad: 45,
-    profesion: "Barro man",
-  };
-  
-  const {nombre, apellido} = newUser;
-
-  function UserCompleteName() {
-    console.log(`Mi nombre es ${nombre} y mi apellido es ${apellido}`)   
-  }
-
-  UserCompleteName();
-
-  
-  //Segundo codigo
-
-
-  const user = {
     name: "Pedro",
     last: "Sánchez",
     age: 45,
-    salary: 1000,
-    profesion: "Barro man",
+    salary: 5000,
+    profession: "Barro man",
   };
+
+  function getCompleteName({name = "unknown", last = "unknown"}, message = 'Name and last name are required') {
+    if (!name || !last) {
+        return message;
+    }
+    return `Your complete name is ${name} ${last}`;
+}
   
-  function userAnnualSalary(user) {
-    const annualSalary = user.salary * 12;
-    return annualSalary
+  function getAnnualSalary({salary} = {} , message = "Salary is required or your salary is less than 0"){
+    if( typeof salary !== "number" || salary <= 0){
+      return message
+    } 
+    const monthsInAYear = 12 
+    const yearSalary = salary * monthsInAYear
+    return `Your salary is: ${yearSalary} ` 
   }
 
-  function userFullName(user) {
-    const fullName = user.name + user.last
-    return fullName
+  function printUserInfo(user){
+    console.log(`${getCompleteName(user)}  ${getAnnualSalary(user)}`);
   }
 
-  function showUserDetais(){
-    return `Mi nombre es ${fullName} y mi sueldo anual es ${annualSalary}`
-  }
-
-  console.log(showUserDetais(user))
+  printUserInfo(newUser);

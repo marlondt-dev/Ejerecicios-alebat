@@ -1,20 +1,34 @@
-console.log(a);
-var a = "hola";  //Da undefined
+const usuario = {
+  nombre: "Pedro",
+  apellido: "Sánchez",
+  edad: 45,
+  profesion: "Barro man",
+};
 
-console.log(b);
-let b = "hola";  //Uncaught ReferenceError: Cannot access 'b' before initialization
+console.log(nombreUsuario(usuario));
 
-console.log(c);
-const c = "hola";  //Ejercicio2.js:7 Uncaught ReferenceError: Cannot access 'c' before initialization
+function nombreUsuario(user) {
+  const nombrCompleto = "Me llamo " + user.nombre + " " + user.apellido;
 
-sayHi();
-
-function sayHi() {
-  console.log("Hola desde sayHi!");   //imprime Hola desde sayHi!
+  return nombrCompleto;
 }
 
-function sayBye() {
-    console.log("Adios desde sayBye!");   //imprime Adios desde sayBye!
-  }
-  
-  sayBye();
+
+//Refactorizando
+
+const newUser = {
+    name: 'Pedro',
+    lastName: 'Sanchez',
+    age : 45,
+    profession: 'Barro man'
+}
+
+
+function completeUserName({name, lastName} = {}, message = 'Name and last name are required'){
+    if(!name || !lastName){
+      return message
+    }
+
+    return `Su nombre es ${name} ${lastName}`
+}
+console.log(completeUserName(newUser))
