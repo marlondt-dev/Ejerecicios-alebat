@@ -25,12 +25,19 @@ const user = {
 const newUser = {
     userName: "Álvaro",
     userLastName: "Morón",
-    userAge: 31,
-    userNationality: "Morocco",
+    userAge: 30,
+    userNationality: "125",
   };
   
+  const notEligibleCountry = 'Spain'
+  typeof notEligibleCountry === 'string'
+
+  const notEligibleAge = 30
+  
+
+
   function isForeign(user) {
-    if (user.userNationality != "España" || user.userAge !== 30 ) {
+    if (user.userNationality != notEligibleCountry || user.userAge !== 30 ) {
       return 'This person is not eligible for  the goverment help'
      }
     
