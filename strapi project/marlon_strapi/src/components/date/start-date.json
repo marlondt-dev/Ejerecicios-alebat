@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_date_start_dates",
+  "info": {
+    "displayName": "event_detail",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "start_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "place": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
