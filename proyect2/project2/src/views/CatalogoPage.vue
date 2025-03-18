@@ -4,9 +4,15 @@ import { productCard } from '@/mock/productCard'
 </script>
 
 <template>
+  <nav>
+    <button><RouterLink to="/">Home</RouterLink></button>
+    <button><RouterLink to="/catalogo">Catalogo</RouterLink></button>
+  </nav>
   <div class="card-container">
     <ProductCard v-for="(item, index) in productCard" :key="index" v-bind="item" />
   </div>
+
+  <RouterView />
 </template>
 
 <style lang="scss" scoped>
