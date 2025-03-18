@@ -12,6 +12,6 @@
 
 <style scoped lang="scss">
 .titulo {
-  color: rgb(83, 26, 26);
+  color: white;
 }
 </style>

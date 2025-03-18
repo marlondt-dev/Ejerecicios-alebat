@@ -4,7 +4,9 @@ import { productCard } from '@/mock/productCard'
 </script>
 
 <template>
-  <ProductCard v-for="(item, index) in productCard" :key="index" v-bind="item" />
+  <div class="card-container">
+    <ProductCard v-for="(item, index) in productCard" :key="index" v-bind="item" />
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -15,5 +17,10 @@ import { productCard } from '@/mock/productCard'
   width: 10em;
   border-radius: 5%;
   text-align: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
