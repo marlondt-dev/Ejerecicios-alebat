@@ -6,12 +6,12 @@ import ParentComponent from '@/components/ParentComponent.vue'
 </script>
 
 <template>
-  <nav>
+  <nav class="navbar">
     <RouterLink class="button" to="/">Home</RouterLink>
     <RouterLink class="button" to="/catalogo">Catalogo</RouterLink>
+    <TheTitle>Titulo Estatico</TheTitle>
   </nav>
 
-  <TheTitle>Titulo Estatico</TheTitle>
   <TheCounter />
   <ParentComponent />
 
@@ -23,6 +23,10 @@ import ParentComponent from '@/components/ParentComponent.vue'
   color: white;
   background-color: black;
   padding: 0.5em;
-  margin: 0.2em;
+  margin: 0.3em;
+}
+
+.navbar {
+  margin: 1.5em;
 }
 </style>
