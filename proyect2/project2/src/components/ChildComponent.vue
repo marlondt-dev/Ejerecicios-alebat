@@ -10,7 +10,7 @@ function clicking() {
 }
 </script>
 <template>
-  <TheButton :text="'EMMIT'" @click="clicking"></TheButton>
+  <TheButton @click="clicking">EMMIT</TheButton>
   <p>INJECT: {{ newMessage }}</p>
 </template>
 

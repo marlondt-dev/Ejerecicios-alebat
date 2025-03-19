@@ -1,11 +1,23 @@
 <script setup lang="ts">
 import { useCounter } from '@/composables/useCounter'
 import TheButton from '@/components/TheButton.vue'
-import { computed } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 
 const { counter, increase, decrease, reset } = useCounter(0)
 
-const doble = computed(() => counter.value * 2)
+const double = computed(() => counter.value * 2)
+
+const message = ref('')
+
+watchEffect(() => {
+  if (counter.value === 0) {
+    message.value = 'Estas en el valor minimo'
+  } else if (counter.value === 10) {
+    message.value = 'Estas en el valor máximo'
+  } else {
+    message.value = 'Estas en los parametros adecuados'
+  }
+})
 
 // const counter = ref(0)
 
@@ -14,27 +26,30 @@ const doble = computed(() => counter.value * 2)
 </script>
 
 <template>
-  <TheButton
-    :text="'INCREASE'"
-    v-if="counter < 10"
-    @click="increase"
-    class="button button--increase"
-  ></TheButton>
+  <h3>{{ message }}</h3>
 
-  <TheButton :text="'DECREASE'" v-if="counter > 0" @click="decrease" class="button button--decrease"
+  <TheButton v-if="counter < 10" @click="increase" class="button button--increase"
+    >INCREASE</TheButton
+  >
+
+  <TheButton
+    :text="'DECREASE'"
+    v-if="counter > 0"
+    @click="decrease"
+    class="button button--decrease"
+    :is-decrease-button="true"
     >DECREASE</TheButton
   >
 
   <div>
-    <TheButton
-      :text="counter"
-      class="button button--result"
-      :class="{ 'button--colored': counter === 10 }"
-    >
+    <TheButton class="button button--result" :class="{ 'button--colored': counter === 10 }"
+      >{{ counter }}
     </TheButton>
-    <TheButton :text="doble"></TheButton>
+    <TheButton>{{ double }}</TheButton>
 
-    <TheButton :text="'RESET'" @click="reset" class="button button--reset"></TheButton>
+    <TheButton v-if="counter > 0" :text="'RESET'" @click="reset" class="button button--reset"
+      >RESET</TheButton
+    >
   </div>
 </template>
 
