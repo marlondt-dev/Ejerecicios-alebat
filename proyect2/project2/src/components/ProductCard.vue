@@ -9,15 +9,13 @@ defineProps<ProductCard>()
 </script>
 
 <template>
-  
-    <div class="card">
-      <img src="/productocaja.jpg" alt="producto caja" />
-      <p>{{ id }}</p>
-      <h3>{{ cardTitle }}</h3>
-      <p>{{ description }}</p>
-      <p>{{ prices }}</p>
-      <button>{{ buttonText }}</button>
-    </div>
+  <div class="card">
+    <img src="/productocaja.jpg" alt="producto caja" />
+    <h3>{{ cardTitle }}</h3>
+    <p>{{ description }}</p>
+    <p>{{ prices }}</p>
+    <button>{{ buttonText }}</button>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -30,7 +28,7 @@ defineProps<ProductCard>()
   text-align: center;
 }
 
-.container {
-  display: flex;
+button {
+  background-color: rgb(30, 30, 129);
 }
 </style>
