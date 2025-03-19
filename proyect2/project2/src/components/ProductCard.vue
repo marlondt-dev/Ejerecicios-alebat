@@ -9,7 +9,7 @@ defineProps<ProductCard>()
 </script>
 
 <template>
-  <div class="container">
+  
     <div class="card">
       <img src="/productocaja.jpg" alt="producto caja" />
       <p>{{ id }}</p>
@@ -18,7 +18,6 @@ defineProps<ProductCard>()
       <p>{{ prices }}</p>
       <button>{{ buttonText }}</button>
     </div>
-  </div>
 </template>
 
 <style scoped lang="scss">
