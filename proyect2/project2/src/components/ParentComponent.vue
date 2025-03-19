@@ -6,7 +6,7 @@ const message = ref('')
 const provideMessae = ref('Hello using provide')
 provide('message', provideMessae)
 
-const changeMessage = (msg) => {
+const changeMessage = (msg = '') => {
   message.value = msg
 }
 </script>
@@ -14,7 +14,6 @@ const changeMessage = (msg) => {
   <div>
     <p>EMMIT MESSAGE: {{ message }}</p>
     <ChildComponent @greeting="changeMessage" />
-    
   </div>
 </template>
 

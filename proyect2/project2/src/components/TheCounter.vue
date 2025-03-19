@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import {useCounter} from '@/composables/useCounter'
+import { useCounter } from '@/composables/useCounter'
+import TheButton from '@/components/TheButton.vue'
 
-const {counter, increase, decrease, reset} = useCounter(0)
+const { counter, increase, decrease, reset } = useCounter(0)
+
 // const counter = ref(0)
 
 // const increase = () => counter.value++
@@ -10,10 +11,24 @@ const {counter, increase, decrease, reset} = useCounter(0)
 </script>
 
 <template>
-  <button v-if="counter < 10" @click="increase" class="button button--increase">INCREASE</button>
-  <button v-if="counter > 0" @click="decrease" class="button button--decrease">DECREASE</button>
-  <button @click="reset" class="button button--reset">RESET</button>
-  <button class="button button--result">{{ counter }}</button>
+  <TheButton
+    :text="'INCREASE'"
+    v-if="counter < 10"
+    @click="increase"
+    class="button button--increase"
+  ></TheButton>
+
+  <TheButton :text="'DECREASE'" v-if="counter > 0" @click="decrease" class="button button--decrease"
+    >DECREASE</TheButton
+  >
+  <TheButton
+    :text="counter"
+    class="button button--result"
+    :class="{ 'button--colored': counter === 10 }"
+  >
+  </TheButton>
+
+  <TheButton :text="'RESET'" @click="reset" class="button button--reset"></TheButton>
 </template>
 
 <style scoped lang="scss">
@@ -28,12 +43,16 @@ const {counter, increase, decrease, reset} = useCounter(0)
     background-color: red;
   }
 
-  &--reset{
+  &--reset {
     background-color: rgb(19, 27, 25);
   }
 
   &--result {
     background-color: rgb(0, 0, 0);
+  }
+
+  &--colored {
+    background-color: green;
   }
 }
 </style>

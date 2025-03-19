@@ -7,8 +7,8 @@ import ParentComponent from '@/components/ParentComponent.vue'
 
 <template>
   <nav>
-    <button><RouterLink to="/">Home</RouterLink></button>
-    <button><RouterLink to="/catalogo">Catalogo</RouterLink></button>
+    <RouterLink class="button" to="/">Home</RouterLink>
+    <RouterLink class="button" to="/catalogo">Catalogo</RouterLink>
   </nav>
 
   <TheTitle>Titulo Estatico</TheTitle>
@@ -18,4 +18,11 @@ import ParentComponent from '@/components/ParentComponent.vue'
   <RouterView />
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.button {
+  color: white;
+  background-color: black;
+  padding: 0.5em;
+  margin: 0.2em;
+}
+</style>

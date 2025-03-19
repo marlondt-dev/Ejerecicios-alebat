@@ -29,7 +29,7 @@ import TheTitle from '@/components/TheTitle.vue'
 
 .card {
   background-color: black;
-  border: dotted 0.1em white;
+  border: solid 0.1em white;
   padding: 1em;
   width: 10em;
   border-radius: 5%;
@@ -39,4 +39,5 @@ import TheTitle from '@/components/TheTitle.vue'
 .card-container {
   display: flex;
   justify-content: space-between;
-}</style>
+}
+</style>

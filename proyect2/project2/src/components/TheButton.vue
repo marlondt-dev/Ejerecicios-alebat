@@ -1,4 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  text: string | number
+}>()
+</script>
+
 <template>
-  <button><slot></slot></button>
+  <button class="main-button">{{ text }}</button>
 </template>
+
+<style lang="scss" scoped>
+.main-button {
+  background-color: black;
+  padding: 0.6em;
+}
+</style>

@@ -1,18 +1,16 @@
-import {ref} from 'vue'
+import { ref } from 'vue'
 
-export function useCounter(initialValue=0){
+export function useCounter(initialValue = 0) {
+  const counter = ref(initialValue)
 
-const counter = ref(initialValue)
+  const increase = () => counter.value++
+  const decrease = () => counter.value--
+  const reset = () => (counter.value = initialValue)
 
-const increase = () => counter.value++
-const decrease = () => counter.value--
-const reset = () => counter.value = initialValue
-
-
-return{
+  return {
     counter,
     increase,
     decrease,
-    reset
-}
+    reset,
+  }
 }
