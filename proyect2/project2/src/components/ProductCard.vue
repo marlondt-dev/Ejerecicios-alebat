@@ -12,7 +12,7 @@ defineProps<ProductCard>()
 
 <template>
   <div class="card">
-    <img src="/productocaja.jpg" alt="producto caja" />
+    <img :src="imgURL" alt="producto caja" />
     <h3>{{ cardTitle }}</h3>
     <p>{{ cardDescription }}</p>
     <p>{{ cardPrice }}</p>
@@ -35,8 +35,5 @@ defineProps<ProductCard>()
 
 button {
   background-color: rgb(30, 30, 129);
-}
-
-.card {
 }
 </style>

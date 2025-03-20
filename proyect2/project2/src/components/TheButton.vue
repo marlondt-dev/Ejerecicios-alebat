@@ -32,6 +32,6 @@ defineProps<{
 }
 
 .main-button:hover {
-  color: rgb(112, 48, 114);
+  color: rgb(38, 18, 151);
 }
 </style>
