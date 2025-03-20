@@ -4,6 +4,7 @@
 //   cardTitle: string
 //   prices: number[]
 // }
+
 import type { ProductCard } from '@/types/card'
 defineProps<ProductCard>()
 </script>

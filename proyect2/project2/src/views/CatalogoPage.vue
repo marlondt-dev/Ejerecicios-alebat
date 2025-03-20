@@ -2,6 +2,7 @@
 import ProductCard from '@/components/ProductCard.vue'
 import { productCard } from '@/mock/productCard'
 import TheTitle from '@/components/TheTitle.vue'
+import TheCounter from '@/components/TheCounter.vue'
 </script>
 
 <template>
@@ -13,6 +14,8 @@ import TheTitle from '@/components/TheTitle.vue'
   <div class="card-container">
     <ProductCard v-for="(item, index) in productCard" :key="index" v-bind="item" />
   </div>
+
+  <TheCounter />
 
   <RouterView />
 </template>

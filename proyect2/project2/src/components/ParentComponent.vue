@@ -2,9 +2,10 @@
 import ChildComponent from './ChildComponent.vue'
 import { ref, provide } from 'vue'
 
-const message = ref('')
-const provideMessae = ref('Hello using provide')
-provide('message', provideMessae)
+const message = ref('') //Pare el EMIT
+
+const provideMessage = ref('Hello using provide')
+provide('message', provideMessage)
 
 const changeMessage = (msg = '') => {
   message.value = msg
