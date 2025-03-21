@@ -18,7 +18,7 @@ defineProps<{
 <style lang="scss" scoped>
 .main-button {
   padding: 0.6em;
-  margin: 0.5em;
+  margin: 0.3em;
   cursor: pointer;
   transition: 0.2s ease;
 }
