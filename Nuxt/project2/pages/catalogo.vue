@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  layout: "menu",
+});
+</script>
 <template>
   <h2>This is a catalogo page</h2>
 </template>

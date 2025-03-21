@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <NuxtPage />
-    <NuxtLink class="button" to="/home">Home</NuxtLink>
-    <NuxtLink class="button" to="/Catalogo">Catalogo</NuxtLink>
-  </div>
+  <NuxtLayout>
+    <div>
+      <NuxtPage />
+      <NuxtLink class="button" to="/home">Home</NuxtLink>
+      <NuxtLink class="button" to="/Catalogo">Catalogo</NuxtLink>
+    </div>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="scss">

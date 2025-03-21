@@ -1,8 +1,9 @@
 <script setup lang="ts"></script>
 <template>
-  <button>
+  <div>
+    <nav><h2>Menú</h2></nav>
     <slot />
-  </button>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
