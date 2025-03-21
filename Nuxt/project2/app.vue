@@ -3,7 +3,8 @@
     <div>
       <NuxtPage />
       <NuxtLink class="button" to="/home">Home</NuxtLink>
-      <NuxtLink class="button" to="/Catalogo">Catalogo</NuxtLink>
+      <NuxtLink class="button" to="/catalogo">Catalogo</NuxtLink>
+      <NuxtLink class="button" to="/productos">Productos</NuxtLink>
     </div>
   </NuxtLayout>
 </template>
