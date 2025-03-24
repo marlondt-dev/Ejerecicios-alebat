@@ -1,10 +1,12 @@
 <script setup lang="ts">
-
+definePageMeta({
+  layout: 'menu'
+})
 
 </script>
 
 <template>
-  <NuxtLayout name="menu"><h3>This is a catalogo page</h3></NuxtLayout>
+ <h3>This is a catalogo page</h3>
 </template>
 
 <style lang="scss" scoped></style>
