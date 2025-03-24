@@ -13,6 +13,9 @@ const rrss = {
   FacebookIcon,
   TwiterIcon,
 }
+
+const social = ref('fb')
+
 </script>
 
 <template>
@@ -29,6 +32,7 @@ const rrss = {
       </TheButton>
       <component :is="rrss[currentRrss as keyof typeof rrss]"></component>
     </div>
+
   </nav>
 </div>
 
@@ -44,8 +48,9 @@ const rrss = {
 .button {
   color: white;
   background-color: black;
-  padding: 0.3em;
+  padding: 0.5em;
   margin: 0.3em;
+  text-decoration: none;
 }
 
 .navbar {

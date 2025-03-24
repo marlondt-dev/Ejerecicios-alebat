@@ -23,6 +23,7 @@ defineProps<ProductCard>()
 <style scoped lang="scss">
 .card {
   background-color: black;
+  opacity: 0.5;
   border: solid 0.1em black;
   padding: 1em;
   border-radius: 3%;
@@ -31,9 +32,17 @@ defineProps<ProductCard>()
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  transition: 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 button {
   background-color: rgb(30, 30, 129);
+}
+
+.card:hover{
+  opacity: 1;
 }
 </style>

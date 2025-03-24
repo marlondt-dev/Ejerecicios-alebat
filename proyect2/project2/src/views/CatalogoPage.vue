@@ -31,6 +31,7 @@ import TheCounter from '@/components/TheCounter.vue'
   background-color: black;
   padding: 0.5em;
   margin: 0.3em;
+  text-decoration: none;
 }
 
 .navbar {
